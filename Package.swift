@@ -31,7 +31,7 @@ let package = Package(
         .target(
             name: "Bit Finite Primitives",
             dependencies: [
-                .product(name: "Bit Boolean Primitives", package: "swift-bit-primitives"),
+                .product(name: "Bit Primitive", package: "swift-bit-primitives"),
                 .product(name: "Bit Primitives Standard Library Integration", package: "swift-bit-primitives"),
                 .product(name: "Finite Enumerable Primitives", package: "swift-finite-primitives"),
                 .product(name: "Cardinal Primitives", package: "swift-cardinal-primitives"),
