@@ -1,15 +1,20 @@
 import Bit_Finite_Primitives
 import Testing
 
-@Suite("Bit Finite.Enumerable")
-struct BitFiniteEnumerableTests {
-    @Suite struct BitValue {}
-    @Suite struct BitOrder {}
+@Suite struct `Bit Finite.Enumerable Tests` {
+    @Suite struct Unit {
+        @Suite struct `Bit Value` {}
+        @Suite struct `Bit Order` {}
+    }
+
+    @Suite struct `Edge Case` {}
+
+    @Suite struct Integration {}
 }
 
 // MARK: - Bit
 
-extension BitFiniteEnumerableTests.BitValue {
+extension `Bit Finite.Enumerable Tests`.Unit.`Bit Value` {
     @Test
     func `Finite.Enumerable count is 2`() {
         #expect(Bit.count == 2)
@@ -30,7 +35,7 @@ extension BitFiniteEnumerableTests.BitValue {
 
 // MARK: - Bit.Order
 
-extension BitFiniteEnumerableTests.BitOrder {
+extension `Bit Finite.Enumerable Tests`.Unit.`Bit Order` {
     @Test
     func `Finite.Enumerable count is 2`() {
         #expect(Bit.Order.count == 2)
