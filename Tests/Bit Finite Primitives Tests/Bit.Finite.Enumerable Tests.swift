@@ -12,8 +12,6 @@ import Testing
     @Suite struct Integration {}
 }
 
-// MARK: - Bit
-
 extension `Bit Finite.Enumerable Tests`.Unit.`Bit Value` {
     @Test
     func `Finite.Enumerable count is 2`() {
@@ -32,8 +30,6 @@ extension `Bit Finite.Enumerable Tests`.Unit.`Bit Value` {
         #expect(Bit(_unchecked: (), ordinal: 1) == .one)
     }
 }
-
-// MARK: - Bit.Order
 
 extension `Bit Finite.Enumerable Tests`.Unit.`Bit Order` {
     @Test
