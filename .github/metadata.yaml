@@ -1,7 +1,7 @@
 # .github/metadata.yaml
 description: "Finite.Enumerable witnesses for Bit and Bit.Order."
 topics:
-  - primitives
+  - molecules
   - finite
   - bit
 homepage: "https://swift-institute.org"

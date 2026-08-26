@@ -1,4 +1,4 @@
-import Bit_Finite_Primitives
+import Bit_Finite
 import Testing
 
 @Suite struct `Bit Finite.Enumerable Tests` {

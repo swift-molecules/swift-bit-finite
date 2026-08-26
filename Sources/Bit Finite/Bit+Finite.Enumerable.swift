@@ -1,6 +1,6 @@
 public import Bit_Primitive
-public import Bit_Primitives_Standard_Library_Integration
-public import Finite_Enumerable_Primitives
+public import Bit_Standard_Library_Integration
+public import Finite_Enumerable
 
 extension Bit: @retroactive Finite.Enumerable {
 

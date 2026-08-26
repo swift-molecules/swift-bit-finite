@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "swift-bit-finite-primitives",
+    name: "swift-bit-finite",
     platforms: [
         .macOS(.v27),
         .iOS(.v27),
@@ -13,58 +13,58 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "Bit Finite Primitives",
-            targets: ["Bit Finite Primitives"]
+            name: "Bit Finite",
+            targets: ["Bit Finite"]
         ),
         .library(
-            name: "Bit Finite Primitives Test Support",
-            targets: ["Bit Finite Primitives Test Support"]
+            name: "Bit Finite Test Support",
+            targets: ["Bit Finite Test Support"]
         ),
     ],
     dependencies: [
         .package(
-            url: "https://github.com/swift-primitives/swift-bit-primitives.git",
+            url: "https://github.com/swift-molecules/swift-bit.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-primitives/swift-finite-primitives.git",
+            url: "https://github.com/swift-molecules/swift-finite.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-primitives/swift-cardinal-primitives.git",
+            url: "https://github.com/swift-molecules/swift-cardinal.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-primitives/swift-ordinal-primitives.git",
+            url: "https://github.com/swift-molecules/swift-ordinal.git",
             branch: "main"
         ),
     ],
     targets: [
         .target(
-            name: "Bit Finite Primitives",
+            name: "Bit Finite",
             dependencies: [
-                .product(name: "Bit Primitive", package: "swift-bit-primitives"),
+                .product(name: "Bit Primitive", package: "swift-bit"),
                 .product(
-                    name: "Bit Primitives Standard Library Integration",
-                    package: "swift-bit-primitives"
+                    name: "Bit Standard Library Integration",
+                    package: "swift-bit"
                 ),
-                .product(name: "Finite Enumerable Primitives", package: "swift-finite-primitives"),
-                .product(name: "Cardinal Primitives", package: "swift-cardinal-primitives"),
-                .product(name: "Ordinal Primitives", package: "swift-ordinal-primitives"),
+                .product(name: "Finite Enumerable", package: "swift-finite"),
+                .product(name: "Cardinal", package: "swift-cardinal"),
+                .product(name: "Ordinal", package: "swift-ordinal"),
             ]
         ),
         .target(
-            name: "Bit Finite Primitives Test Support",
+            name: "Bit Finite Test Support",
             dependencies: [
-                "Bit Finite Primitives"
+                "Bit Finite"
             ],
             path: "Tests/Support"
         ),
         .testTarget(
-            name: "Bit Finite Primitives Tests",
+            name: "Bit Finite Tests",
             dependencies: [
-                "Bit Finite Primitives",
-                "Bit Finite Primitives Test Support",
+                "Bit Finite",
+                "Bit Finite Test Support",
             ]
         ),
     ],

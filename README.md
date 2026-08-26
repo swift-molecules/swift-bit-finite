@@ -1,4 +1,4 @@
-# Bit Finite Primitives
+# Bit Finite
 
 ![Development Status](https://img.shields.io/badge/status-active--development-blue.svg)
 
@@ -11,7 +11,7 @@ Retroactive `Finite.Enumerable` conformances for `Bit` and `Bit.Order`, presenti
 `Bit` is a two-value enum (`.zero` / `.one`) and `Bit.Order` is a two-value enum (`.msb` / `.lsb`). This package conforms both to `Finite.Enumerable`, the protocol for types with finitely many indexed inhabitants: each value gains a `static count` (a `Cardinal`), an `ordinal` (an `Ordinal` in `0..<count`), and an unchecked ordinal initializer. The conformance is an isomorphism with `Ordinal<count>` — `ordinal` maps a value to its index, and `init(_unchecked:ordinal:)` maps an index back to a value.
 
 ```swift
-import Bit_Finite_Primitives
+import Bit_Finite
 
 // Each type reports how many values it has, as a Cardinal.
 Bit.count              // 2
@@ -36,7 +36,7 @@ Because both types satisfy `Finite.Enumerable`, they also inherit the protocol's
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/swift-primitives/swift-bit-finite-primitives.git", branch: "main")
+    .package(url: "https://github.com/swift-molecules/swift-bit-finite.git", branch: "main")
 ]
 ```
 
@@ -44,7 +44,7 @@ dependencies: [
 .target(
     name: "App",
     dependencies: [
-        .product(name: "Bit Finite Primitives", package: "swift-bit-finite-primitives"),
+        .product(name: "Bit Finite", package: "swift-bit-finite"),
     ]
 )
 ```
@@ -59,8 +59,8 @@ Two library products. The conformance composes four primitives: `Bit` (and its s
 
 | Product | Target | Purpose |
 |---------|--------|---------|
-| `Bit Finite Primitives` | `Sources/Bit Finite Primitives/` | Conforms `Bit` and `Bit.Order` to `Finite.Enumerable` (`count` / `ordinal` / `init(_unchecked:ordinal:)`); re-exports `Bit`, `Cardinal`, `Ordinal`, and the `Finite.Enumerable` protocol. |
-| `Bit Finite Primitives Test Support` | `Tests/Support/` | Surfaces the witness to test consumers via `import Bit_Finite_Primitives`. |
+| `Bit Finite` | `Sources/Bit Finite/` | Conforms `Bit` and `Bit.Order` to `Finite.Enumerable` (`count` / `ordinal` / `init(_unchecked:ordinal:)`); re-exports `Bit`, `Cardinal`, `Ordinal`, and the `Finite.Enumerable` protocol. |
+| `Bit Finite Test Support` | `Tests/Support/` | Surfaces the witness to test consumers via `import Bit_Finite`. |
 
 Foundation-free.
 
