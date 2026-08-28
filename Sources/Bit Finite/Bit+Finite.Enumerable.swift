@@ -1,6 +1,9 @@
-public import Bit_Primitive
+public import Bit
 public import Bit_Standard_Library_Integration
-public import Finite_Enumerable
+public import Cardinal
+public import Finite
+public import Finite_Ordinal
+public import Ordinal
 
 extension Bit: @retroactive Finite.Enumerable {
 
@@ -12,25 +15,25 @@ extension Bit: @retroactive Finite.Enumerable {
 
     @inlinable
     public init(_unchecked: Void, ordinal: Ordinal) {
-        self = [.zero, .one][ordinal]
+        self = ordinal.rawValue == 0 ? .zero : .one
     }
 }
 
 extension Bit.Order: @retroactive Finite.Enumerable {
 
     @inlinable
-    public static var count: Cardinal { 2 }
+    public static var count: Cardinal { Cardinal(2) }
 
     @inlinable
     public var ordinal: Ordinal {
         switch self {
-        case .msb: 0
-        case .lsb: 1
+        case .msb: Ordinal(0)
+        case .lsb: Ordinal(1)
         }
     }
 
     @inlinable
     public init(_unchecked: Void, ordinal: Ordinal) {
-        self = [.msb, .lsb][ordinal]
+        self = ordinal.rawValue == 0 ? .msb : .lsb
     }
 }

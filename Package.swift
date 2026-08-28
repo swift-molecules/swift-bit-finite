@@ -23,19 +23,23 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/swift-molecules/swift-bit.git",
+            url: "https://github.com/swift-atoms/swift-bit.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-molecules/swift-finite.git",
+            url: "https://github.com/swift-atoms/swift-finite.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-molecules/swift-cardinal.git",
+            url: "https://github.com/swift-molecules/swift-finite-ordinal.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-molecules/swift-ordinal.git",
+            url: "https://github.com/swift-atoms/swift-cardinal.git",
+            branch: "main"
+        ),
+        .package(
+            url: "https://github.com/swift-atoms/swift-ordinal.git",
             branch: "main"
         ),
     ],
@@ -43,12 +47,13 @@ let package = Package(
         .target(
             name: "Bit Finite",
             dependencies: [
-                .product(name: "Bit Primitive", package: "swift-bit"),
+                .product(name: "Bit", package: "swift-bit"),
                 .product(
                     name: "Bit Standard Library Integration",
                     package: "swift-bit"
                 ),
-                .product(name: "Finite Enumerable", package: "swift-finite"),
+                .product(name: "Finite", package: "swift-finite"),
+                .product(name: "Finite Ordinal", package: "swift-finite-ordinal"),
                 .product(name: "Cardinal", package: "swift-cardinal"),
                 .product(name: "Ordinal", package: "swift-ordinal"),
             ]
